@@ -13,7 +13,7 @@ function App() {
  async function datafunc() {
   setloader(true)
   try{
-    const response=await fetch("https://aggreb-a44i.vercel.app/upload",{
+    const response=await fetch("https://aggreb-f1.vercel.app/upload",{
       method:"POST",
       body:JSON.stringify({
         Name:name,
