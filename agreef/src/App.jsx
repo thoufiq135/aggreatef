@@ -77,11 +77,25 @@ function App() {
     {pri?<>
     <div>
       Total={count[0].count}
-      <div>
-        {pri._id}----------{pri.count}<br/>
-        {gov._id}----------{gov.count}<br/>
-        {enter._id}----------{enter.count}
-      </div>
+     <table border={1}>
+      <thead>
+      <tr>
+      <th>{gov._id}-{gov.count}</th>
+      <th>{enter._id}-{enter.count}</th>
+        <th>{pri._id}-{pri.count}</th>
+       
+       
+        </tr></thead>    
+        <tbody>
+        {Array.from({ length: Math.max(pri?.names?.length || 0, gov?.names?.length || 0, enter?.names?.length || 0) }).map((_, i) => (
+          <tr key={i}>
+            <td>{gov?.names?.[i] || ""}</td>
+            <td>{enter?.names?.[i] || ""}</td>
+            <td>{pri?.names?.[i] || ""}</td>
+          </tr>
+        ))} 
+        </tbody>
+     </table>
     </div>
     </>:<p>No data found!</p>}
       
